@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Pablo Pérez - Desarrollador de Software</title>
+    <title>Pablo Pérez Cruz - Portafolio | Desarrollador Full Stack | Python, JavaScript, Django</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Desarrollador Full Stack con 4+ años de experiencia en Python, JavaScript, Django, Flask. Especialista en desarrollo web, sistemas POS y aplicaciones de gestión.">
+    <meta name="keywords" content="desarrollador full stack, python developer, javascript, django, flask, desarrollador web, guatemala, quiché, sistemas punto de venta, aplicaciones web">
+    <meta name="author" content="Pablo Pérez Cruz">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="GT">
+    <meta name="geo.placename" content="Quiché, Guatemala">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Pablo Pérez Cruz - Desarrollador Full Stack">
+    <meta property="og:description" content="Desarrollador Full Stack con 4+ años de experiencia en Python, JavaScript, Django, Flask">
+    <meta property="og:url" content="https://pabloperez.dev">
+    <meta property="og:site_name" content="CV Pablo Pérez">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pablo Pérez Cruz - Desarrollador Full Stack">
+    <meta name="twitter:description" content="Desarrollador Full Stack con 4+ años de experiencia en Python, JavaScript, Django, Flask">
+    
+    <!-- Structured Data for ATS -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pablo Pérez Cruz",
+        "jobTitle": "Desarrollador Full Stack",
+        "description": "Desarrollador de software con más de 4 años de experiencia en desarrollo web y aplicaciones",
+        "email": "pablo.perez@ejemplo.com",
+        "telephone": "+502 1234 5678",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Quiché",
+            "addressCountry": "Guatemala"
+        },
+        "url": "https://linkedin.com/in/pabloperez",
+        "sameAs": [
+            "https://github.com/pabloperez",
+            "https://linkedin.com/in/pabloperez"
+        ],
+        "knowsAbout": [
+            "Python", "JavaScript", "Django", "Flask", "HTML5", "CSS3", 
+            "SQL", "Desarrollo Web", "Sistemas POS", "Aplicaciones de Gestión"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Ingeniería en Sistemas y Ciencias de la Computación",
+                "credentialCategory": "degree",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Universidad Mariano Gálvez"
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" as="script">
+    
+    <!-- Stable versions of libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CV Pablo Pérez">
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Service Worker for PWA capabilities (commented out for now) -->
+    <!--
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
+    -->
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -28,7 +116,435 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: #f9f9f9;
-            padding-bottom: 40px;
+            padding-top: 70px; /* Space for fixed navbar */
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #e8f4fd;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image .profile-img {
+            width: 300px;
+            height: 300px;
+            font-size: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .hero-image .profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 80px;
+            }
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            opacity: 0.8;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-color);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .stat p {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-placeholder span {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .image-placeholder p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .image-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-brand:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .pdf-button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            min-height: 44px;
+        }
+        
+        .pdf-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
         }
         
         .container {
@@ -217,6 +733,18 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            min-height: 44px; /* Mejora accesibilidad táctil */
+        }
+        
+        .pdf-button:focus {
+            outline: 3px solid #ff6b35;
+            outline-offset: 2px;
+        }
+        
+        .pdf-button:active {
+            transform: scale(0.95);
         }
         
         .pdf-button:hover {
@@ -254,6 +782,59 @@
             100% { transform: rotate(360deg); }
         }
         
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+        }
+        
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Mejoras para impresión */
+        @media print {
+            .pdf-button, .loading {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            h2 {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+        }
+        
         @media print {
             .pdf-button {
                 display: none;
@@ -262,6 +843,7 @@
             header {
                 background: var(--primary-color) !important;
                 -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             
             body {
@@ -308,13 +890,40 @@
     </style>
 </head>
 <body>
-    <div class="loading" id="loading">
-        <div class="spinner"></div>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#inicio" class="nav-brand">Pablo Pérez</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#casos-estudio" class="nav-link">Casos de Estudio</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-actions">
+                <button class="pdf-button" id="download-pdf" aria-label="Descargar CV en formato PDF" title="Generar y descargar PDF del currículum">
+                    <span role="img" aria-label="Descargar">📥</span> CV
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="loading" id="loading" role="status" aria-live="polite" aria-label="Generando PDF">
+        <div class="spinner" aria-hidden="true"></div>
         <div>Generando PDF...</div>
     </div>
-    <button class="pdf-button" id="download-pdf">
-        <span>📥</span> Descargar PDF
-    </button>
 
     <!-- Versión optimizada para PDF (oculta en la web) -->
     <div id="pdf-content" class="pdf-version">
@@ -332,7 +941,7 @@
         
         <div class="pdf-section">
             <h2>Resumen Profesional</h2>
-            <p>Desarrollador de software con más de 4 años de experiencia en la creación de soluciones innovadoras y eficientes. Especializado en Desarrollo Web, poseo habilidades sólidas en el diseño, implementación y mantenimiento de aplicaciones de alta calidad. Mi enfoque centrado en el usuario y mi capacidad para trabajar en equipo me han permitido contribuir significativamente al éxito de proyectos complejos. Constantemente actualizado con las últimas tendencias tecnológicas, estoy comprometido con la mejora continua y la entrega de resultados excepcionales.</p>
+            <p>Desarrollador Full Stack con más de 4 años de experiencia en desarrollo de aplicaciones web escalables y sistemas empresariales. Especializado en Python, JavaScript, Django, y tecnologías modernas como React.js, Docker, y AWS. Experiencia comprobada en desarrollo de APIs REST, sistemas POS, e-commerce, y aplicaciones de gestión empresarial. Certificado en metodologías Agile/Scrum y TDD. Líder técnico con habilidades en arquitectura de microservicios, CI/CD, y optimización de rendimiento. Comprometido con la innovación tecnológica y la entrega de soluciones de alta calidad que generan valor empresarial.</p>
         </div>
         
         <div class="pdf-section">
@@ -443,39 +1052,76 @@
                 <div class="skill-category">
                     <h3>Lenguajes de Programación</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python 3.8+</span>
+                        <span class="skill-tag">JavaScript ES6+</span>
+                        <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Frameworks y Librerías</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Django 4.x</span>
+                        <span class="skill-tag">Django REST Framework</span>
                         <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Tkinter</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Bootstrap 5</span>
+                        <span class="skill-tag">Tailwind CSS</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Bases de Datos</h3>
+                    <h3>Bases de Datos y Tecnologías</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Sistemas de gestión de datos</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub Actions</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Otras Habilidades</h3>
+                    <h3>Cloud y DevOps</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Desarrollo Web</span>
-                        <span class="skill-tag">Sistemas Punto de Venta</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Heroku</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Nginx</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Metodologías y Herramientas</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">TDD</span>
+                        <span class="skill-tag">API REST</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">OAuth</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Especializaciones</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Full Stack Development</span>
+                        <span class="skill-tag">Sistemas POS</span>
+                        <span class="skill-tag">E-commerce</span>
                         <span class="skill-tag">Aplicaciones de Gestión</span>
-                        <span class="skill-tag">Reparación de Hardware</span>
+                        <span class="skill-tag">Microservicios</span>
                         <span class="skill-tag">Soporte Técnico</span>
-                        <span class="skill-tag">Enseñanza Tecnológica</span>
                     </div>
                 </div>
             </div>
@@ -511,42 +1157,78 @@
         </div>
     </div>
 
-    <!-- Versión web normal (visible en el navegador) -->
+    <!-- Portafolio Principal -->
     <div id="cv-content">
-        <header>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
             <div class="container">
-                <div class="profile-img">👨‍💻</div>
-                <h1>Pablo Pérez Cruz</h1>
-                <div class="title">Desarrollador de Software</div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>pablo.perez@ejemplo.com</span>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hola, soy <span class="highlight">Pablo Pérez Cruz</span></h1>
+                        <h2 class="hero-subtitle">Desarrollador Full Stack</h2>
+                        <p class="hero-description">
+                            Especialista en crear soluciones web innovadoras con Python, JavaScript y Django. 
+                            Transformo ideas en aplicaciones digitales que generan valor empresarial.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                            <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+502 1234 5678</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Quiché, Guatemala</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>🔗</span>
-                        <span>linkedin.com/in/pabloperez</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>💻</span>
-                        <span>github.com/pabloperez</span>
+                    <div class="hero-image">
+                        <div class="profile-img" role="img" aria-label="Foto de perfil de Pablo Pérez Cruz">👨‍💻</div>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <main class="container">
-            <section id="resumen">
-                <h2>Resumen Profesional</h2>
-                <p>Desarrollador de software con más de 4 años de experiencia en la creación de soluciones innovadoras y eficientes. Especializado en Desarrollo Web, poseo habilidades sólidas en el diseño, implementación y mantenimiento de aplicaciones de alta calidad. Mi enfoque centrado en el usuario y mi capacidad para trabajar en equipo me han permitido contribuir significativamente al éxito de proyectos complejos. Constantemente actualizado con las últimas tendencias tecnológicas, estoy comprometido con la mejora continua y la entrega de resultados excepcionales.</p>
+        <main role="main" id="main-content">
+            <!-- Sobre Mí Section -->
+            <section id="sobre-mi" class="about-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Sobre Mí</h2>
+                        <p class="section-subtitle">Conoce mi historia y pasión por el desarrollo</p>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="lead">
+                                Desarrollador Full Stack con más de 4 años de experiencia creando soluciones web innovadoras 
+                                que transforman ideas en aplicaciones digitales exitosas.
+                            </p>
+                            <p>
+                                Mi pasión por la tecnología comenzó desde muy joven, y he dedicado mi carrera a dominar 
+                                las últimas tecnologías y metodologías de desarrollo. Especializado en Python, JavaScript, 
+                                Django y tecnologías modernas como React.js, Docker y AWS.
+                            </p>
+                            <p>
+                                He liderado el desarrollo de sistemas empresariales complejos, desde sistemas POS hasta 
+                                aplicaciones de gestión académica, siempre enfocándome en crear soluciones escalables, 
+                                mantenibles y centradas en el usuario.
+                            </p>
+                            <div class="about-stats">
+                                <div class="stat">
+                                    <h3>4+</h3>
+                                    <p>Años de experiencia</p>
+                                </div>
+                                <div class="stat">
+                                    <h3>50+</h3>
+                                    <p>Proyectos completados</p>
+                                </div>
+                                <div class="stat">
+                                    <h3>100%</h3>
+                                    <p>Clientes satisfechos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-image">
+                            <div class="image-placeholder">
+                                <span>💻</span>
+                                <p>Desarrollando soluciones innovadoras</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="experiencia">
@@ -657,39 +1339,76 @@
                     <div class="skill-category">
                         <h3>Lenguajes de Programación</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python 3.8+</span>
+                            <span class="skill-tag">JavaScript ES6+</span>
+                            <span class="skill-tag">TypeScript</span>
                             <span class="skill-tag">HTML5</span>
                             <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">SQL</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
                         <h3>Frameworks y Librerías</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Django 4.x</span>
+                            <span class="skill-tag">Django REST Framework</span>
                             <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Tkinter</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Bootstrap 5</span>
+                            <span class="skill-tag">Tailwind CSS</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Bases de Datos</h3>
+                        <h3>Bases de Datos y Tecnologías</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Sistemas de gestión de datos</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub Actions</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Otras Habilidades</h3>
+                        <h3>Cloud y DevOps</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Desarrollo Web</span>
-                            <span class="skill-tag">Sistemas Punto de Venta</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Heroku</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Nginx</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Metodologías y Herramientas</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">TDD</span>
+                            <span class="skill-tag">API REST</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">JWT</span>
+                            <span class="skill-tag">OAuth</span>
+                            <span class="skill-tag">Postman</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Especializaciones</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Full Stack Development</span>
+                            <span class="skill-tag">Sistemas POS</span>
+                            <span class="skill-tag">E-commerce</span>
                             <span class="skill-tag">Aplicaciones de Gestión</span>
-                            <span class="skill-tag">Reparación de Hardware</span>
+                            <span class="skill-tag">Microservicios</span>
                             <span class="skill-tag">Soporte Técnico</span>
-                            <span class="skill-tag">Enseñanza Tecnológica</span>
                         </div>
                     </div>
                 </div>
@@ -731,6 +1450,29 @@
     <script>
         // Efecto de aparición suave al hacer scroll
         document.addEventListener('DOMContentLoaded', function() {
+            // Verificar que las librerías estén cargadas
+            function checkLibraries() {
+                console.log('html2canvas:', typeof html2canvas);
+                console.log('window.jspdf:', typeof window.jspdf);
+                console.log('jsPDF:', typeof jsPDF);
+                
+                if (typeof html2canvas === 'undefined') {
+                    console.log('html2canvas no está disponible, reintentando...');
+                    setTimeout(checkLibraries, 200);
+                    return;
+                }
+                
+                if (typeof window.jspdf === 'undefined') {
+                    console.log('window.jspdf no está disponible, reintentando...');
+                    setTimeout(checkLibraries, 200);
+                    return;
+                }
+                
+                console.log('Librerías cargadas correctamente');
+            }
+            
+            // Esperar un poco más para que las librerías se carguen
+            setTimeout(checkLibraries, 500);
             const sections = document.querySelectorAll('section');
             
             const observer = new IntersectionObserver((entries) => {
@@ -749,65 +1491,147 @@
                 observer.observe(section);
             });
             
-            // Configuración para generar PDF
-            const { jsPDF } = window.jspdf;
+            // Mobile navigation toggle
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
             
             document.getElementById('download-pdf').addEventListener('click', function() {
-                generatePDF();
+                // Pequeño delay para asegurar que las librerías estén cargadas
+                setTimeout(() => {
+                    generatePDF();
+                }, 100);
             });
             
             function generatePDF() {
                 const loading = document.getElementById('loading');
                 loading.style.display = 'flex';
                 
+                // Verificar que las librerías estén cargadas
+                if (typeof html2canvas === 'undefined') {
+                    loading.style.display = 'none';
+                    showNotification('Error: html2canvas no está cargado', 'error');
+                    return;
+                }
+                
+                if (typeof window.jspdf === 'undefined') {
+                    loading.style.display = 'none';
+                    showNotification('Error: jsPDF no está cargado', 'error');
+                    return;
+                }
+                
                 // Mostrar la versión optimizada para PDF
                 const pdfElement = document.getElementById('pdf-content');
                 pdfElement.style.display = 'block';
                 
-                // Configuración de html2canvas para mejor calidad
-                html2canvas(pdfElement, {
+                // Configuración simplificada de html2canvas
+                const options = {
                     scale: 2,
                     useCORS: true,
+                    allowTaint: true,
                     logging: false,
-                    scrollY: -window.scrollY,
-                    windowWidth: pdfElement.scrollWidth,
-                    windowHeight: pdfElement.scrollHeight,
-                    width: pdfElement.scrollWidth,
-                    height: pdfElement.scrollHeight
-                }).then(canvas => {
-                    const imgData = canvas.toDataURL('image/png');
-                    const pdf = new jsPDF('p', 'mm', 'a4');
-                    const imgWidth = 210; // Ancho A4 en mm
-                    const pageHeight = 295; // Alto A4 en mm
-                    const imgHeight = canvas.height * imgWidth / canvas.width;
-                    let heightLeft = imgHeight;
-                    let position = 0;
-                    
-                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                    
-                    // Añadir páginas adicionales si es necesario
-                    while (heightLeft >= 0) {
-                        position = heightLeft - imgHeight;
-                        pdf.addPage();
+                    backgroundColor: '#ffffff'
+                };
+                
+                html2canvas(pdfElement, options).then(canvas => {
+                    try {
+                        const imgData = canvas.toDataURL('image/png');
+                        // Usar la sintaxis correcta para jsPDF 2.5.1
+                        const { jsPDF } = window.jspdf;
+                        const pdf = new jsPDF('p', 'mm', 'a4');
+                        
+                        const imgWidth = 210; // Ancho A4 en mm
+                        const pageHeight = 295; // Alto A4 en mm
+                        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                        let heightLeft = imgHeight;
+                        let position = 0;
+                        
+                        // Primera página
                         pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
                         heightLeft -= pageHeight;
+                        
+                        // Páginas adicionales si es necesario
+                        while (heightLeft >= 0) {
+                            position = heightLeft - imgHeight;
+                            pdf.addPage();
+                            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                            heightLeft -= pageHeight;
+                        }
+                        
+                        // Ocultar la versión PDF después de generar
+                        pdfElement.style.display = 'none';
+                        
+                        // Guardar el PDF
+                        const fileName = `Pablo_Perez_Cruz_Desarrollador_Full_Stack_${new Date().getFullYear()}.pdf`;
+                        pdf.save(fileName);
+                        
+                        loading.style.display = 'none';
+                        showNotification('PDF generado exitosamente', 'success');
+                        
+                    } catch (error) {
+                        console.error('Error al procesar el PDF:', error);
+                        pdfElement.style.display = 'none';
+                        loading.style.display = 'none';
+                        showNotification('Error al procesar el PDF: ' + error.message, 'error');
                     }
-                    
-                    // Ocultar la versión PDF después de generar
-                    pdfElement.style.display = 'none';
-                    
-                    // Guardar el PDF
-                    pdf.save('CV_Pablo_Perez.pdf');
-                    
-                    loading.style.display = 'none';
                 }).catch(error => {
                     console.error('Error al generar PDF:', error);
-                    // Asegurarse de ocultar la versión PDF en caso de error
                     pdfElement.style.display = 'none';
                     loading.style.display = 'none';
-                    alert('Error al generar el PDF. Por favor, inténtelo de nuevo.');
+                    showNotification('Error al generar el PDF: ' + error.message, 'error');
                 });
+            }
+            
+            // Función para mostrar notificaciones
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 5px;
+                    z-index: 1001;
+                    font-weight: bold;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    animation: slideDown 0.3s ease;
+                `;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'slideUp 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
             }
         });
     </script>
